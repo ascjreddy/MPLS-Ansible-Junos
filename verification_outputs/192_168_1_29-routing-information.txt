@@ -1,0 +1,51 @@
+
+
+inet.0: 23 destinations, 23 routes (23 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+1.1.1.0/24         *[Direct/0] 5d 05:59:42
+                    > via lo0.0
+1.1.1.1/32         *[Local/0] 5d 05:59:42
+                      Local via lo0.0
+1.1.1.2/32         *[OSPF/10] 5d 05:58:04, metric 1
+                    > to 8.1.1.2 via ge-0/0/2.0
+1.1.1.3/32         *[OSPF/10] 5d 05:57:59, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+1.1.1.4/32         *[OSPF/10] 5d 05:57:54, metric 3
+                    > to 8.1.1.2 via ge-0/0/2.0
+1.1.1.5/32         *[OSPF/10] 5d 05:57:54, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+1.1.1.6/32         *[OSPF/10] 5d 05:57:43, metric 4
+                    > to 8.1.1.2 via ge-0/0/2.0
+7.1.1.0/30         *[OSPF/10] 5d 05:58:04, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+7.1.1.4/30         *[OSPF/10] 5d 05:57:59, metric 3
+                    > to 8.1.1.2 via ge-0/0/2.0
+7.1.1.8/30         *[OSPF/10] 5d 05:57:54, metric 3
+                    > to 8.1.1.2 via ge-0/0/2.0
+7.1.1.12/30        *[OSPF/10] 5d 05:58:04, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+8.1.1.0/30         *[Direct/0] 5d 05:59:42
+                    > via ge-0/0/2.0
+8.1.1.1/32         *[Local/0] 5d 05:59:42
+                      Local via ge-0/0/2.0
+9.1.1.0/30         *[OSPF/10] 5d 05:57:54, metric 4
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.1.0/24       *[OSPF/10] 5d 05:57:59, metric 3
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.2.0/24       *[OSPF/10] 5d 05:57:59, metric 3
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.100.0/24     *[OSPF/10] 5d 05:57:59, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.100.1/32     *[OSPF/10] 5d 05:57:59, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.110.0/24     *[OSPF/10] 5d 05:57:59, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+73.48.110.1/32     *[OSPF/10] 5d 05:57:59, metric 2
+                    > to 8.1.1.2 via ge-0/0/2.0
+192.168.1.0/24     *[Direct/0] 31w3d 23:55:52
+                    > via ge-0/0/0.0
+192.168.1.29/32    *[Local/0] 31w3d 23:56:01
+                      Local via ge-0/0/0.0
+224.0.0.5/32       *[OSPF/10] 5d 05:58:58, metric 1
+                      MultiRecv

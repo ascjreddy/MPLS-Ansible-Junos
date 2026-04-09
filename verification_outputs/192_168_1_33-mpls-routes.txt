@@ -1,0 +1,23 @@
+
+
+mpls.0: 9 destinations, 9 routes (9 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+0                  *[MPLS/0] 5d 05:58:58, metric 1
+                      Receive
+1                  *[MPLS/0] 5d 05:58:58, metric 1
+                      Receive
+2                  *[MPLS/0] 5d 05:58:58, metric 1
+                      Receive
+13                 *[MPLS/0] 5d 05:58:58, metric 1
+                      Receive
+299920             *[LDP/9] 5d 05:58:51, metric 1
+                    > to 7.1.1.9 via ge-0/0/1.0, Pop      
+299920(S=0)        *[LDP/9] 5d 05:58:51, metric 1
+                    > to 7.1.1.9 via ge-0/0/1.0, Pop      
+299936             *[LDP/9] 5d 05:58:43, metric 1
+                    > to 7.1.1.14 via ge-0/0/2.0, Pop      
+299936(S=0)        *[LDP/9] 5d 05:58:43, metric 1
+                    > to 7.1.1.14 via ge-0/0/2.0, Pop      
+299952             *[LDP/9] 5d 05:58:43, metric 1
+                    > to 7.1.1.14 via ge-0/0/2.0, Swap 299920

@@ -1,0 +1,10 @@
+inet.3: 3 destinations, 3 routes (3 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+                                        
+1.1.1.2/32         *[LDP/9] 5d 06:03:22, metric 1
+                    > to 7.1.1.1 via ge-0/0/1.0
+1.1.1.4/32         *[LDP/9] 5d 06:03:15, metric 1
+                    > to 7.1.1.1 via ge-0/0/1.0, Push 299952
+1.1.1.5/32         *[LDP/9] 5d 06:03:15, metric 1
+                    > to 7.1.1.1 via ge-0/0/1.0, Push 299936
+

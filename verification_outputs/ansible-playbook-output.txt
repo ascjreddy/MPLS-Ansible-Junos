@@ -1,0 +1,146 @@
+[labuser@localhost Documents]$ ansible-playbook project01.yaml -i inventory.yaml
+
+PLAY [Configure OSPF on Juniper devices] **************************************************************************************************************************************************************************
+
+TASK [Configure interfaces with IP addresses] *********************************************************************************************************************************************************************
+ok: [srx240_3]
+ok: [srx240_1]
+ok: [srx240_4]
+ok: [srx240_5]
+ok: [srx240_2]
+ok: [srx240_6]
+
+TASK [Configure OSPF and security zones on all routers] ***********************************************************************************************************************************************************
+ok: [srx240_1]
+ok: [srx240_3]
+ok: [srx240_4]
+ok: [srx240_5]
+ok: [srx240_2]
+ok: [srx240_6]
+
+TASK [Get route information and save it in a text file] ***********************************************************************************************************************************************************
+ok: [srx240_3]
+ok: [srx240_1]
+ok: [srx240_5]
+ok: [srx240_4]
+ok: [srx240_2]
+ok: [srx240_6]
+
+PLAY [Configure MPLS on the core routers] *************************************************************************************************************************************************************************
+
+TASK [Configure LDP and MPLS on interfaces] ***********************************************************************************************************************************************************************
+ok: [srx240_3]
+ok: [srx240_4]
+ok: [srx240_5]
+ok: [srx240_2]
+
+TASK [Save LDP neighbors for each router in a text file] **********************************************************************************************************************************************************
+ok: [srx240_3]
+ok: [srx240_5]
+ok: [srx240_4]
+ok: [srx240_2]
+
+TASK [Get inet.3 routes] ******************************************************************************************************************************************************************************************
+[WARNING]: The value {'table': 'inet.3'} (type dict) in a string field was converted to "{'table': 'inet.3'}" (type string). If this does not look like what you expect, quote the entire value to ensure it does
+not change.
+ok: [srx240_3]
+ok: [srx240_5]
+ok: [srx240_2]
+ok: [srx240_4]
+
+TASK [Get mpls routes] ********************************************************************************************************************************************************************************************
+[WARNING]: The value {'table': 'mpls.0'} (type dict) in a string field was converted to "{'table': 'mpls.0'}" (type string). If this does not look like what you expect, quote the entire value to ensure it does
+not change.
+ok: [srx240_3]
+ok: [srx240_5]
+ok: [srx240_4]
+ok: [srx240_2]
+
+PLAY [Test connectivity between two edge IP networks] *************************************************************************************************************************************************************
+
+TASK [Ping the other edge IP network] *****************************************************************************************************************************************************************************
+[WARNING]: The value {'host': '9.1.1.2'} (type dict) in a string field was converted to "{'host': '9.1.1.2'}" (type string). If this does not look like what you expect, quote the entire value to ensure it does
+not change.
+ok: [srx240_1]
+
+TASK [Print ping result] ******************************************************************************************************************************************************************************************
+ok: [srx240_1] => {
+    "result": {
+        "attrs": null,
+        "changed": false,
+        "failed": false,
+        "format": "xml",
+        "kwargs": {
+            "host": "9.1.1.2"
+        },
+        "msg": "The RPC executed successfully.",
+        "parsed_output": {
+            "ping-results": {
+                "packet-size": "56",
+                "ping-success": "",
+                "probe-result": {
+                    "ip-address": "9.1.1.2",
+                    "probe-index": "1",
+                    "probe-success": "",
+                    "response-size": "64",
+                    "rtt": "5777",
+                    "sequence-number": "0",
+                    "time-to-live": "61"
+                },
+                "probe-results-summary": {
+                    "packet-loss": "0",
+                    "probes-sent": "1",
+                    "responses-received": "1",
+                    "rtt-average": "5777",
+                    "rtt-maximum": "5777",
+                    "rtt-minimum": "5777",
+                    "rtt-stddev": "0"
+                },
+                "target-host": "9.1.1.2",
+                "target-ip": "9.1.1.2"
+            }
+        },
+        "rpc": "ping",
+        "stdout": "<ping-results>\n  <target-host>9.1.1.2</target-host>\n  <target-ip>9.1.1.2</target-ip>\n  <packet-size>56</packet-size>\n  <probe-result date-determined=\"1734284814\">\n    <probe-index>1</probe-index>\n    <probe-success/>\n    <sequence-number>0</sequence-number>\n    <ip-address>9.1.1.2</ip-address>\n    <time-to-live>61</time-to-live>\n    <response-size>64</response-size>\n    <rtt>5777</rtt>\n  </probe-result>\n  <probe-results-summary>\n    <probes-sent>1</probes-sent>\n    <responses-received>1</responses-received>\n    <packet-loss>0</packet-loss>\n    <rtt-minimum>5777</rtt-minimum>\n    <rtt-maximum>5777</rtt-maximum>\n    <rtt-average>5777</rtt-average>\n    <rtt-stddev>0</rtt-stddev>\n  </probe-results-summary>\n  <ping-success/>\n</ping-results>\n",
+        "stdout_lines": [
+            "<ping-results>",
+            "  <target-host>9.1.1.2</target-host>",
+            "  <target-ip>9.1.1.2</target-ip>",
+            "  <packet-size>56</packet-size>",
+            "  <probe-result date-determined=\"1734284814\">",
+            "    <probe-index>1</probe-index>",
+            "    <probe-success/>",
+            "    <sequence-number>0</sequence-number>",
+            "    <ip-address>9.1.1.2</ip-address>",
+            "    <time-to-live>61</time-to-live>",
+            "    <response-size>64</response-size>",
+            "    <rtt>5777</rtt>",
+            "  </probe-result>",
+            "  <probe-results-summary>",
+            "    <probes-sent>1</probes-sent>",
+            "    <responses-received>1</responses-received>",
+            "    <packet-loss>0</packet-loss>",
+            "    <rtt-minimum>5777</rtt-minimum>",
+            "    <rtt-maximum>5777</rtt-maximum>",
+            "    <rtt-average>5777</rtt-average>",
+            "    <rtt-stddev>0</rtt-stddev>",
+            "  </probe-results-summary>",
+            "  <ping-success/>",
+            "</ping-results>"
+        ],
+        "warnings": [
+            "The value {'host': '9.1.1.2'} (type dict) in a string field was converted to \"{'host': '9.1.1.2'}\" (type string). If this does not look like what you expect, quote the entire value to ensure it does not change."
+        ]
+    }
+}
+
+PLAY RECAP ********************************************************************************************************************************************************************************************************
+srx240_1                   : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srx240_2                   : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srx240_3                   : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srx240_4                   : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srx240_5                   : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srx240_6                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[labuser@localhost Documents]$ 
+
